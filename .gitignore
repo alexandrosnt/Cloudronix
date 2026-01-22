@@ -1,0 +1,6 @@
+*.pub
+*.pem
+*.key
+*.exe
+build/
+alexandrosntonasgithub
