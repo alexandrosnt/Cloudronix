@@ -22,11 +22,12 @@ The agent acts as the execution arm of the Cloudronix platform. It maintains a p
 
 ```mermaid
 graph LR
-    subgraph "Managed Endpoint (Open Source)"
+    %% We use <br> to break the long title line
+    subgraph "Managed Endpoint<br>(Open Source)"
         Agent[Cloudronix Agent]
     end
 
-    subgraph "Cloudronix Control Plane (Proprietary)"
+    subgraph "Cloudronix Control Plane<br>(Proprietary)"
         API[API & Orchestration]
         UI[Management Dashboard]
     end
