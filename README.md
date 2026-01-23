@@ -22,33 +22,25 @@ The agent acts as the execution arm of the Cloudronix platform. It maintains a p
 
 ```mermaid
 graph LR
-    %% 1. Define a 'spacer' style: Invisible box, 50px high
-    classDef spacer width:0px,height:50px,fill:none,stroke:none;
+    %% Define a spacer to force vertical distance
+    classDef spacer height:30px,fill:none,stroke:none;
 
     subgraph "Managed Endpoint (Open Source)"
         direction TB
-        %% Spacer 1 pushes the Agent down
-        Space1[ ]:::spacer
+        %% This invisible spacer pushes the Agent box down
+        S1[ ]:::spacer
         Agent[Cloudronix Agent]
-        
-        %% The ~~~ creates an INVISIBLE link to stack them
-        Space1 ~~~ Agent
+        S1 ~~~ Agent
     end
 
     subgraph "Cloudronix Control Plane (Proprietary)"
-        direction TB
-        %% Spacer 2 pushes the API down
-        Space2[ ]:::spacer
-        API[API & Orchestration]
+        direction LR
         UI[Management Dashboard]
-        
-        %% Invisible link stacking
-        Space2 ~~~ API
+        API[API & Orchestration]
+        UI -.-> API
     end
 
-    %% 2. Use a long arrow (---->) to move the text away from the border
     Agent ---->|mTLS + WebSocket| API
-    UI -.-> API
 ```
 
 ---
