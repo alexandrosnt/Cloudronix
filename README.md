@@ -1,5 +1,7 @@
-# Cloudronix Agent
-
+<h1>
+<img src="logo.svg" width="48" height="48" style="" align="center" />
+<span style="vertical-align: middle; margin-bottom: 8px;">Cloudronix Agent</span>
+</h1>
 **The open-source endpoint agent for the Cloudronix RMM platform.**
 
 Cloudronix is a modern Remote Monitoring and Management (RMM) solution designed for speed, security, and cross-platform automation. This repository contains the source code for the **Cloudronix Agent**, a lightweight binary that resides on managed endpoints to execute commands and report system health.
