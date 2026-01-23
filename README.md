@@ -21,26 +21,10 @@ Cloudronix operates on a hybrid model to balance transparency with powerful cent
 The agent acts as the execution arm of the Cloudronix platform. It maintains a persistent, encrypted connection to the Control Plane to receive instructions and stream telemetry.
 
 ```mermaid
-graph LR
-    %% Define a spacer to force vertical distance
-    classDef spacer height:30px,fill:none,stroke:none;
-
-    subgraph "Managed Endpoint (Open Source)"
-        direction TB
-        %% This invisible spacer pushes the Agent box down
-        S1[ ]:::spacer
-        Agent[Cloudronix Agent]
-        S1 ~~~ Agent
-    end
-
-    subgraph "Cloudronix Control Plane (Proprietary)"
-        direction LR
-        UI[Management Dashboard]
-        API[API & Orchestration]
-        UI -.-> API
-    end
-
-    Agent ---->|mTLS + WebSocket| API
+flowchart LR
+    Agent[Cloudronix Agent] -->|mTLS + WebSocket| API[Backend API]
+    API --> DB[(PostgreSQL)]
+    Dashboard[Web Dashboard] --> API
 ```
 
 ---
